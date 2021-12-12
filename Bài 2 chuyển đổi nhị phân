@@ -1,0 +1,59 @@
+// Bài 2: chuyển đổi số từ hệ cơ số 10 sang hệ nhị phân và ngược lại
+package cybersoft.java16.buoi1;
+
+import java.util.Scanner;
+
+public class Bai2_ToBinary {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Your choice: 1.Decimal to binary OR 2.Binary to decimal ?");
+		int choice = input.nextInt();
+		
+		//Decimal to binary
+		if(choice == 1) {
+			System.out.print("Decimal number: ");
+			int decimalNumber = input.nextInt();
+			System.out.print("Binary number: ");
+			decimalToBinary(decimalNumber);
+		}
+		//Binary to decimal
+		else if(choice == 2) {
+			System.out.print("Binary number: ");
+			int binaryNumber = input.nextInt();
+			System.out.print("Decimal number: ");
+			binaryToDecimal(binaryNumber);
+		}
+	}
+	
+	public static void decimalToBinary(int decimalNumber) {
+		int[] binaryNumber = new int[100];
+		int i = 0;
+		while (decimalNumber > 0 ) {
+			binaryNumber[i]= decimalNumber % 2;
+			decimalNumber = decimalNumber / 2;
+			i++;
+		}
+		for(int y=i-1;y>=0;y--) {
+			System.out.print(binaryNumber[y]);
+		}
+				
+	}
+	public static void binaryToDecimal(int binaryNumber) {
+		int decimalNumber = 0;
+		String s = Integer.toString(binaryNumber);
+				
+		for(int i = 0; i<s.length(); i++){
+			
+			System.out.println("so thu " + i + "la: " +  Integer.parseInt(String.valueOf(s.charAt(i))));
+			decimalNumber = decimalNumber +(int)(Math.pow(2,i)) * Integer.parseInt(String.valueOf(s.charAt(i)));
+			System.out.println("decimalnumber la: " + decimalNumber);
+		}
+		
+		System.out.println(decimalNumber);
+		
+	}
+
+}
