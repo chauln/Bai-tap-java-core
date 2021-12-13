@@ -3,12 +3,19 @@ package cybersoft.java16.buoi1;
 public class Bai3_JavaVersion {
 
 	public static void main(String[] args) {
-		System.out.println("Java version");
-		System.out.println("Java Runtime Version");
-		System.out.println("Java Home");
-		System.out.println("Java Vendor");
-		System.out.println("Java Vendor URL");
-		System.out.println("Java Class Path");
+		String version = System.getProperty("java.version");
+		String runtimeversion = System.getProperty("java.runtime.version");
+		String vendor = System.getProperty("java.vendor");
+		String vendorurl = System.getProperty("java.vendor.url");
+		String home = System.getProperty("java.home");
+		String classpath = System.getProperty("java.classpath");
+		
+		System.out.println("Java version: " + version);
+		System.out.println("Java Runtime Version: " + runtimeversion);
+		System.out.println("Java Home" + home);
+		System.out.println("Java Vendor: " + vendor);
+		System.out.println("Java Vendor URL: "+ vendorurl);
+		System.out.println("Java Class Path" + classpath);
 		
 
 	}
